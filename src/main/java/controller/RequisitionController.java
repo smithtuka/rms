@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/requisition"})
+@WebServlet(name ="requisition", urlPatterns = {"/requisition"})
 public class RequisitionController extends HttpServlet {
 
     private RequisitionDao requisitionDao;

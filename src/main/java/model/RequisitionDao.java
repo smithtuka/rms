@@ -11,9 +11,9 @@ import java.util.*;
 
 public class RequisitionDao {
 
-    Map<Integer,Requisition> reqDb = new HashMap<>();
+    static  Map<Integer,Requisition> reqDb = new HashMap<>();
 
-    {
+    static {
         List<Product> products = new ArrayList<>();
         products.add(new Product("meat", 123, 4));
         products.add(new Product("buns", 23, 465));
