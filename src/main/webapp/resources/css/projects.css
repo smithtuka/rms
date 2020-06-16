@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    line-height: 1;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4FC3F7;
+    height: 47px;
+}
+
+.container {
+    display: inline-block;
+    margin: 19px;
+    overflow: auto;
+    justify-content: center;
+    /*text-align: center;*/
+}
+#projects, #requisitions{
+    border: 5px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 2em;
+
+}
+#projects{
+    /*float: right;*/
+}
+#requisitions{
+    /*margin-left: 40%;*/
+    margin-right: 6em;
+    float: left;
+}
+.divider {
+    margin: 10px 0 10px 0;
+}
+
+h1 {
+    font-size: 25px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+}
+
+.pjt-btn {
+    background-color: #4FC3F7; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 14px 2px;
+    cursor: pointer;
+}
+
+#pjt_table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#pjt_table td, #req_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#pjt_table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#pjt_table tr:hover {
+    background-color: #ddd;
+}
+
+#pjt_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4FC3F7;
+    color: white;
+}
+
+input, label {
+    display: block;
+}
+
+input.pjt-input {
+    margin: 20px 0px;
+    display: block;
+}
+
+.pjt-label {
+    display: block;
+}
+
+.pjt-input {
+    float: left;
+    margin-right: 20px;
+}
+
+#pjt-list {
+
+}
+
+.clear-box {
+    clear: left;
+}
+
+
+
+button:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}

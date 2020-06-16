@@ -3,6 +3,7 @@ package controller;
 import com.google.gson.Gson;
 import model.Project;
 import model.ProjectDao;
+import model.UserDao;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -15,18 +16,20 @@ import java.util.List;
 
 @WebServlet(name = "/project", urlPatterns = "/project")
 public class ProjectController extends HttpServlet {
-    ProjectDao projectDB;
+    ProjectDao projectDao;
     Gson mapper;
+    UserDao userDao;
+
     @Override
     public void init(ServletConfig config) throws ServletException {
-        projectDB = new ProjectDao();
+        projectDao = new ProjectDao();
         mapper = new Gson();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        List<Project> projectList = projectDB.getProjects();
+        List<Project> projectList = projectDao.getProjects();
         req.getSession().setAttribute("projectList", projectList);
         req.getRequestDispatcher("/projects.jsp").forward(req, resp);
 
@@ -34,6 +37,13 @@ public class ProjectController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String projectData = req.getParameter("projects");
+        Project[] projects = mapper.fromJson(projectData, Project[].class);
+        for (Project p : projects) {
+            p.setId(projectDao.generateID());
+            projectDao.saveProject(p);
+            System.out.println(p);
+        }
 
 
     }
