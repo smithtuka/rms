@@ -24,6 +24,7 @@
     <div>
         <label class="req-label" for="req-date">Required Date</label>
         <input class="req-input" id="req-date" type="date">
+
         <h3>Products</h3>
         <hr class="divider">
         <div id="pdt-list">
@@ -50,14 +51,6 @@
         <div class="clear-box">
             <button id="submit-btn"  class="req-btn">Submit</button>
         </div>
-        <%--        <div>--%>
-        <%--            <label for="req-date">Required Date</label>--%>
-        <%--            <input class="req-input" id="req-date" type="date">--%>
-        <%--        </div>--%>
-
-        <%--        <h2>Product Line</h2>--%>
-        <%--        <hr class="divider">--%>
-        <%--        <input class="req-input" id="req-pdt" type="date">--%>
     </div>
 </div>
 
