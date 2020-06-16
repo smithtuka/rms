@@ -34,7 +34,7 @@
             <th>Request Deadline</th>
             <th>Status</th>
         </tr>
-        <c:forEach items="${requisitions}" var="requisition">
+        <c:forEach var="requisition" items="${requisitions}" >
             <tr>
                 <td>${requisition.id}</td>
                 <td><fmt:formatDate type="date" value="${requisition.creationDate}" /></td>
