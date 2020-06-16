@@ -20,11 +20,11 @@
 
 </ul>
 <div class="container">
-    <h1>Requisition Form</h1>
+    <h1>Project Form</h1>
     <hr class="divider">
     <div>
-        <label class="req-label" for="req-date">Required Date</label>
-        <input class="req-input" id="req-date" type="date">
+<%--        <label class="req-label" for="req-date">Required Date</label>--%>
+<%--        <input class="req-input" id="req-date" type="date">--%>
         <h3>Projects</h3>
         <hr class="divider">
         <div id="pdt-list">
@@ -47,7 +47,7 @@
                     <input class="pjt-input" id="description" type="text" value="" name="description">
                 </div>
                 <div class="clear-box">
-                    <button id="pdt-btn" class="pjt-btn">Add product</button>
+                    <button id="pjt-btn" class="pjt-btn">Add Project</button>
                 </div>
             </form>
         </div>

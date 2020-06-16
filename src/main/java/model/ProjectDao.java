@@ -11,9 +11,9 @@ public class ProjectDao {
 
 
     {
-        projectDb.put(0, new Project(0, "ROM WASHINGTON", 23000.00, 1, "Apartments"));
-        projectDb.put(1, new Project(1, "KING FAHAD PLAZA", 45000.00, 2, "Plaza construction"));
-        projectDb.put(2, new Project(2, "ROM WASHINGTON", 27000.00, 1, "Residential Complex"));
+        projectDb.put(0, new Project(0, "ROM WASHINGTON", 23000.00, "1", "Apartments"));
+        projectDb.put(1, new Project(1, "KING FAHAD PLAZA", 45000.00, "2", "Plaza construction"));
+        projectDb.put(2, new Project(2, "ROM WASHINGTON", 27000.00, "1", "Residential Complex"));
     }
 
 
