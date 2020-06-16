@@ -40,6 +40,6 @@ public class RequisitionController extends HttpServlet {
         requisition.setUserId(1);
         requisitionDao.saveRequisition(requisition);
         System.out.println(requisition);
-
+        resp.sendRedirect("/requisition");
     }
 }
