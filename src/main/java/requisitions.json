@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "creationDate": "10/17/2019",
+    "requiredDate": "9/15/2019",
+    "productLine": [
+      {
+        "id": 1,
+        "name": "Beans - Black Bean, Dry",
+        "price": 1,
+        "quantity": 1
+      },
+      {
+        "id": 2,
+        "name": "Black Bean, Dry",
+        "price": 1,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "creationDate": "5/5/2020",
+    "requiredDate": "10/27/2019",
+    "productLine": [
+      {
+        "id": 2,
+        "name": "White Reef",
+        "price": 2,
+        "quantity": 2
+      },
+      {
+        "id": 5,
+        "name": "Huck Towels White",
+        "price": 2,
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "creationDate": "3/2/2020",
+    "requiredDate": "9/20/2019",
+    "productLine": [
+      {
+        "id": 3,
+        "name": "Pail - 15l White, With Handle",
+        "price": 3,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "userId": 1,
+    "creationDate": "5/17/2020",
+    "requiredDate": "9/28/2019",
+    "productLine": [
+      {
+        "id": 4,
+        "name": "Quail - Jumbo",
+        "price": 4,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "creationDate": "1/17/2020",
+    "requiredDate": "2/5/2020",
+    "productLine": [
+      {
+        "id": 5,
+        "name": "Garbage Bags - Black",
+        "price": 5,
+        "quantity": 5
+      }
+    ]
+  }
+]
