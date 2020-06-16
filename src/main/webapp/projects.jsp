@@ -21,9 +21,10 @@
 <table id="req_table">
     <tr>
         <th>Id No.</th>
-        <th>Date of Request</th>
-        <th>Request Deadline</th>
-        <th>Status</th>
+        <th>Project</th>
+        <th>Budget</th>
+        <th>Description</th>
+        <th>Supervisor</th>
     </tr>
     <c:forEach items="${projects}" var="project">
         <tr>
