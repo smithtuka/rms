@@ -14,6 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <script src="<c:url value="/action.js"/>" type="text/javascript"></script>
     <link href="<c:url value="/style.css"/>" type="text/css" rel="stylesheet">
+    <link href="<c:url value="resources/css/projects.css"/>" type="text/css" rel="stylesheet">
 </head>
 <body>
 <hr class="divider">
@@ -26,15 +27,16 @@
         <th>Description</th>
         <th>Supervisor</th>
     </tr>
-    <c:forEach items="${projects}" var="project">
+    <c:forEach var="project" items="${projectList}" >
         <tr>
             <td>${project.id}</td>
-            <td>${project.name}</td>
+            <td>${project.projectName}</td>
             <td>${project.budget}</td>
             <td>${project.description}</td>
             <td>${project.supervisor}</td>
         </tr>
     </c:forEach>
+    end!
 </table>
 </body>
 </html>
