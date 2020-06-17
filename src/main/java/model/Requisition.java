@@ -11,6 +11,7 @@ public class Requisition {
     private Date creationDate;
     private Date requiredDate;
     private String status;
+    private int projectId;
 
     public Requisition() {
     }
@@ -24,7 +25,8 @@ public class Requisition {
 
 
 
-    public Requisition(List<Product> productLine, int userId, Date creationDate, Date requiredDate, String status) {
+    public Requisition(List<Product> productLine, int userId, Date creationDate, Date requiredDate,
+                       String status) {
         this.productLine = productLine;
         this.userId = userId;
         this.creationDate = creationDate;
@@ -32,14 +34,25 @@ public class Requisition {
         this.status = status;
     }
 
-    public Requisition(int id, List<Product> productLine, int userId, Date creationDate, Date requiredDate,
-                       String status) {
+    public Requisition(List<Product> productLine, int userId, Date creationDate, Date requiredDate,
+                       String status, int projectId) {
+        this.productLine = productLine;
+        this.userId = userId;
+        this.creationDate = creationDate;
+        this.requiredDate = requiredDate;
+        this.status = status;
+        this.projectId = projectId;
+    }
+
+    public Requisition(int id, List<Product> productLine, int userId,
+                       Date creationDate, Date requiredDate, String status, int projectId) {
         this.id = id;
         this.productLine = productLine;
         this.userId = userId;
         this.creationDate = creationDate;
         this.requiredDate = requiredDate;
         this.status = status;
+        this.projectId = projectId;
     }
 
     public int getId() {
@@ -88,5 +101,22 @@ public class Requisition {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public double getTotal() {
+        double total = 0;
+        for (Product product: productLine) {
+            total += (product.getPrice() * product.getQuantity());
+        }
+
+        return total;
+    }
+
+    public int getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(int projectId) {
+        this.projectId = projectId;
     }
 }
