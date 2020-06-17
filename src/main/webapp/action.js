@@ -1,4 +1,5 @@
 (function () {
+    let projectId = "";
     $(function () {
 
         let submit_btn = $("#submit-btn");
@@ -9,14 +10,36 @@
         pdt_btn.click(validateData);
         pdt_btn.click(saveData);
         pdt_btn.click(displayData);
+
+        $(".del-btn").each(function () {
+            $(this).click(deleteRequisition);
+        });
+
+        $("#project").change(function(){
+            projectId = $(this).children("option:selected").val();
+            console.log(projectId);
+        });
     })
+
+    function deleteRequisition() {
+        let element = $(this);
+        let str = element.attr("id").replace("btn_", "");
+        let url = `/requisition/${str}`;
+        $.ajax(url, {
+            method: 'DELETE',
+            success: function (data) {
+                console.log(data);
+                element.parents("tr").remove();
+            }
+        })
+    }
 
     let productList = [];
 
     function validateData(evt) {
         evt.preventDefault();
         if ($("#name").val() === "" || $("#price").val() === ""
-            || $("#quantity").val() === "" || $("#req-date").val() === "") {
+            || $("#quantity").val() === "" || $("#req-date").val() === "" || projectId === "") {
             console.log("Empty");
             evt.stopImmediatePropagation();
         }
@@ -28,12 +51,11 @@
         let name = $("#name").val();
         let price = $("#price").val();
         let quantity = $("#quantity").val();
-        $("#pdt-form").get(0).reset();
 
         let product = {
             name: name,
             price: price,
-            quantity: quantity
+            quantity: quantity,
         };
         productList.push(product);
     }
@@ -43,8 +65,19 @@
         productList.forEach(product => {
             total += (product.price * product.quantity);
         })
-
+        let name = $("#name").val();
+        let price = $("#price").val();
+        let quantity = $("#quantity").val();
         $("#total").text(total);
+        let row = $("<tr>");
+        row.append($("<td>").text(name));
+        row.append($("<td>").text(price));
+        row.append($("<td>").text(quantity));
+        row.append($("<td>").text(quantity * price));
+        row.append($("<td>")
+            .append("<button>").addClass("del-btn").text("Delete"));
+        $("#req_table").append(row);
+        $("#pdt-form").get(0).reset();
     }
 
     function submitData() {
@@ -53,10 +86,11 @@
             creationDate: new Date(),
             requiredDate: new Date($("#req-date").val()),
             productLine: productList,
+            projectId: parseInt(projectId)
         }
 
         $.post("requisition", {requisition: JSON.stringify(requisition)}, function () {
-            document.location.href= '/requisition';
+            document.location.href = '/requisition';
         });
 
     }

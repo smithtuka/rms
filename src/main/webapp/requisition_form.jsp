@@ -25,6 +25,13 @@
         <label class="req-label" for="req-date">Required Date</label>
         <input class="req-input" id="req-date" type="date">
 
+        <label class="req-label" for="project">Choose Project</label>
+        <select class="req-input" name="project" id="project">
+            <c:forEach items="${requisitions}" var="requisition">
+                <option value="${requisition.projectId}">${projects.get(requisition.projectId).projectName}</option>
+            </c:forEach>
+        </select>
+
         <h3>Products</h3>
         <hr class="divider">
         <div id="pdt-list">
@@ -48,8 +55,18 @@
                 </div>
             </form>
         </div>
+
+        <table id="req_table">
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Sub Total</th>
+                <th></th>
+            </tr>
+        </table>
         <div class="clear-box">
-            <button id="submit-btn"  class="req-btn">Submit</button>
+            <button id="submit-btn" class="req-btn">Submit</button>
         </div>
     </div>
 </div>

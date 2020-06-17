@@ -12,6 +12,8 @@
 <head>
     <title>My Requisitions</title>
     <link href="style.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="<c:url value="/action.js"/>" type="text/javascript"></script>
 </head>
 <body>
 <ul id="navbar">
@@ -21,7 +23,7 @@
 
 <div class="container">
     <div>
-        <a class="req-btn" href="${pageContext.request.contextPath}/requisition_form.jsp">Create Requisition</a>
+        <a class="req-btn" href="${pageContext.request.contextPath}/requisition-form">Create Requisition</a>
     </div>
 
     <h1>My Requisitions</h1>
@@ -30,16 +32,22 @@
     <table id="req_table">
         <tr>
             <th>Id No.</th>
+            <th>Project Name</th>
             <th>Date of Request</th>
             <th>Request Deadline</th>
+            <th>Proposed Budget (UDS$)</th>
             <th>Status</th>
+            <th>  </th>
         </tr>
         <c:forEach items="${requisitions}" var="requisition">
             <tr>
                 <td>${requisition.id}</td>
+                <td>${projects.get(requisition.projectId).projectName}</td>
                 <td><fmt:formatDate type="date" value="${requisition.creationDate}" /></td>
                 <td><fmt:formatDate type="date" value="${requisition.requiredDate}" /></td>
+                <td>${requisition.total}</td>
                 <td>${requisition.status}</td>
+                <td><button class="del-btn" id="btn_${requisition.id}">Delete</button></td>
             </tr>
         </c:forEach>
     </table>
