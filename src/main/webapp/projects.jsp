@@ -13,6 +13,7 @@
     <title>Projects</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <script src="<c:url value="/action.js"/>" type="text/javascript"></script>
+    <script src="<c:url value="/resources/js/projects.js"/>" type="text/javascript"></script>
     <link href="<c:url value="/style.css"/>" type="text/css" rel="stylesheet">
     <link href="<c:url value="resources/css/projects.css"/>" type="text/css" rel="stylesheet">
 </head>
@@ -26,17 +27,19 @@
         <th>Budget</th>
         <th>Description</th>
         <th>Supervisor</th>
+        <th>Action</th>
     </tr>
     <c:forEach var="project" items="${projectList}" >
         <tr>
-            <td>${project.id}</td>
-            <td>${project.projectName}</td>
-            <td>${project.budget}</td>
-            <td>${project.description}</td>
-            <td>${project.supervisor}</td>
+            <td class="p_id">${project.id}</td>
+            <td class="p_name">${project.projectName}</td>
+            <td class="p_budget">${project.budget}</td>
+            <td class="p_description">${project.description}</td>
+            <td class="p_supervisor">${project.supervisor}</td>
+            <td><button class="edit-pjt-btn">Edit </button><button class="del-pjt-btn">Delete</button></td>
         </tr>
     </c:forEach>
-    end!
+    <div id="msg"></div>
 </table>
 </body>
 </html>
