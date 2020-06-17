@@ -84,13 +84,13 @@
             </form>
         </div>
         <div class="clear-box">
-            <table>
+            <table id="req_table">
                 <tr>
-                    <td>Name</td>
-                    <td>Budget</td>
-                    <td>Supervisor</td>
-                    <td>Description</td>
-                    <td>Action</td>
+                    <th>Name</th>
+                    <th>Budget</th>
+                    <th>Supervisor</th>
+                    <th>Description</th>
+                    <th>Action</th>
                 </tr>
             </table>
             <button id="submit-btn" class="pjt-btn">Submit</button>

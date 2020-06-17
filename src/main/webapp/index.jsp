@@ -17,6 +17,7 @@
     <link href="<c:url value="/resources/css/projects.css"/>" type="text/css" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="<c:url value="auth.js" />" type="text/javascript"></script>
     <script src="<c:url value="/action.js"/>" type="text/javascript"></script>
 </head>
 <body>
