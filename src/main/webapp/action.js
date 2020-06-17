@@ -1,5 +1,8 @@
 (function () {
     let projectId = "";
+    let total;
+    let productList = [];
+
     $(function () {
 
         let submit_btn = $("#submit-btn");
@@ -34,8 +37,6 @@
         })
     }
 
-    let productList = [];
-
     function validateData(evt) {
         evt.preventDefault();
         if ($("#name").val() === "" || $("#price").val() === ""
@@ -60,11 +61,15 @@
         productList.push(product);
     }
 
-    function displayData() {
-        let total = 0;
+    function calculateTotal() {
+        total = 0;
         productList.forEach(product => {
             total += (product.price * product.quantity);
         })
+    }
+
+    function displayData() {
+        calculateTotal();
         let name = $("#name").val();
         let price = $("#price").val();
         let quantity = $("#quantity").val();
@@ -75,8 +80,19 @@
         row.append($("<td>").text(quantity));
         row.append($("<td>").text(quantity * price));
         row.append($("<td>")
-            .append("<button>").addClass("del-btn").text("Delete"));
+            .append("<button>").addClass("del-btn").text("Delete").click(deleteAddedItem));
         $("#req_table").append(row);
+        $("#pdt-form").get(0).reset();
+    }
+
+    function deleteAddedItem() {
+        let productName = $(this).parents("tr")
+            .children(":first-child").text();
+
+        productList = productList.filter(e => e.name !== productName);
+        calculateTotal();
+        $("#total").text(total);
+        $(this).parents("tr").remove();
         $("#pdt-form").get(0).reset();
     }
 
