@@ -13,7 +13,8 @@ public class ProjectDao {
     {
         projectDb.put(0, new Project(0, "ROM WASHINGTON", 23000.00, 1, "Apartments"));
         projectDb.put(1, new Project(1, "KING FAHAD PLAZA", 45000.00, 2, "Plaza construction"));
-        projectDb.put(2, new Project(2, "ROM WASHINGTON", 27000.00, 1, "Residential Complex"));
+        projectDb.put(2, new Project(2, "HAM TOWERS", 27000.00, 1, "Residential Complex"));
+        projectDb.put(3, new Project(3, "REED TOWER", 27000.00, 1, "Residential Complex"));
     }
 
 
@@ -35,12 +36,19 @@ public class ProjectDao {
             int p_id = Integer.parseInt(id);
             projectDb.remove(p_id);
             System.out.println("Project" + p_id + "removed successfully");
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
+    public Project getProjectById(int id) {
+        return projectDb.get(id);
+    }
+
+    public Map<Integer, Project> getProjectDb() {
+        return projectDb;
+    }
+
+
 
 
     public void editProject(Project pjt, int ext) {
