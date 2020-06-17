@@ -29,7 +29,7 @@ function submitData() {
     const url="/login"
 
     $.post(url, {email: $("#email").val(), username: $("#username").val(), password:$("#password").val(), edit: JSON.stringify(false)}, function(data, status, xhr){
-        document.location.href= '/requisition'
+        document.location.href= '/index.jsp'
     })
 }
 
@@ -39,7 +39,7 @@ function handleUpdate() {
     const user = {email: $("#update_email").val(), username: $("#update_name").val(), userId: $("#update_id").val(), password: $("#update_password").val()}
 
     $.post(url, {user: JSON.stringify(user), edit: JSON.stringify(true)}, function () {
-        document.location.href = '/requisition'
+        document.location.href = '/index.jsp'
     })
 }
 

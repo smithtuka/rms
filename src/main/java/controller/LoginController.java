@@ -19,7 +19,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-@WebServlet(name = "LoginController", urlPatterns = {"/login", ""})
+@WebServlet(name = "LoginController", urlPatterns = {"/login"})
 public class LoginController extends HttpServlet {
 
     private UserDao userDao;
@@ -55,9 +55,7 @@ public class LoginController extends HttpServlet {
                 System.out.println("User: " + user.getEmail());
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
-                System.out.println("To Dashboard ");
-                response.sendRedirect("requisitions.jsp");
-//                response.sendRedirect("/requisitions.jsp");// requisition
+                response.sendRedirect("index.jsp");
             } else {
                 request.setAttribute("errorMessage", "Invalid email or password");
                 RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");

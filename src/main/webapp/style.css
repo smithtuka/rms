@@ -6,17 +6,135 @@
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
+#requisitions a, #projects a {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.logo img {
+    height: 45px;
+}
+
+img {
+    height: 25px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: auto;
+    height: 55px;
+}
+
+.logo, .name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile, .inner-gangsta {
+    display: flex;
+
+}
+
+.inner-profile {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name:hover, #logout_btn:hover, .page-title a:hover {
+    color: dodgerblue;
+}
+
+.inner-profile a {
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
 #navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #4FC3F7;
-    height: 47px;
+    height: 55px;
+}
+
+.page-title {
+    padding: 30px 10px;
+    height: 70px;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page-title a {
+    z-index: 9999999;
+    display: flex;
+    width: 52%;
+    margin: auto;
+    top: 25px;
+    position: relative;
+}
+
+.page-title h3 {
+    font-size: 25px;
+    position: relative;
+    top: -10px;
+    z-index: -1;
+}
+
+#err-message {
+    color: red;
+}
+
+fieldset {
+    border: 1px dashed #d7d7d7;
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#update_prof, #login-btn {
+    display: block;
+    border: none;
+    padding: 10px 20px;
+    background: #0091d3;
+    color: #fff;
+    margin: auto;
+    margin-top: 90px;
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+label input {
+    border: 1px solid #cecece;
+    padding: 4px 8px;
+}
+
+label .text {
+    text-align: left;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    width: 150px;
 }
 
 .container {
-    margin: 19px;
+    margin: auto;
+    width: 80%;
 }
 
 .divider {
@@ -68,9 +186,9 @@ h1 {
     color: white;
 }
 
-input, label {
-    display: block;
-}
+/*input, label {*/
+/*    display: block;*/
+/*}*/
 
 .req-input {
     margin: 20px 0px;
@@ -105,8 +223,21 @@ button:disabled {
     color: #666666;
 }
 
-.del-btn {
+.del-btn, .del-pjt-btn {
     background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 14px 2px;
+    cursor: pointer;
+}
+
+.edit-pjt-btn, .pjt-btn, .submit-btn {
+    background-color: #0091d3; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;

@@ -7,7 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "AuthFilter", urlPatterns = {"/profile.jsp", "/projects.jsp", "/requisition", "/requisitions.jsp", "/requisition-form"})
+@WebFilter(filterName = "AuthFilter", urlPatterns = {"", "/profile.jsp", "/projects.jsp", "/requisition",
+        "/requisitions.jsp", "/requisition-form", "/project", "/project-form.jsp"})
 public class AuthFilter implements Filter {
     public void destroy() {
     }
@@ -20,7 +21,7 @@ public class AuthFilter implements Filter {
             chain.doFilter(req, resp);
         }else {
             HttpServletResponse bwana = (HttpServletResponse) resp;
-            bwana.sendRedirect("login.jsp");
+            bwana.sendRedirect("/login");
         }
     }
 

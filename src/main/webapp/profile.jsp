@@ -7,9 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-%>
+
 <html>
 <head>
     <title>Profile</title>
@@ -22,7 +20,7 @@
 <div id="navbar">
     <ul>
         <div class="logo">
-            <a href="${pageContext.request.contextPath}/requisition">
+            <a href="${pageContext.request.contextPath}/index.jsp">
             <img src="resources/logo.png" />
             </a>
         </div>
