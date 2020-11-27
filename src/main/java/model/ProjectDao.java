@@ -31,6 +31,17 @@ public class ProjectDao {
         projectDb.put(project.getId(), project);
     }
 
+
+    public void deleteProject(String id) {
+        try {
+            int p_id = Integer.parseInt(id);
+            projectDb.remove(p_id);
+            System.out.println("Project" + p_id + "removed successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public Project getProjectById(int id) {
         return projectDb.get(id);
     }
@@ -40,4 +51,16 @@ public class ProjectDao {
     }
 
 
+
+
+    public void editProject(Project pjt, int ext) {
+        try {
+            projectDb.remove(ext);// pjt.getId()
+            projectDb.put(ext, pjt);
+            System.out.println("Project - " + ext + " edited successfully");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 }

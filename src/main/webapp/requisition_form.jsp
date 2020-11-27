@@ -7,19 +7,57 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+%>
 <html>
 <head>
     <title>Requisition Form</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="<c:url value="auth.js" />" type="text/javascript"></script>
     <script src="<c:url value="/action.js"/>" type="text/javascript"></script>
     <link href="<c:url value="/style.css"/>" type="text/css" rel="stylesheet">
 </head>
 <body>
-<ul id="navbar">
 
-</ul>
+<div id="navbar">
+    <ul>
+        <div class="logo">
+            <a href="${pageContext.request.contextPath}/index.jsp">
+                <img src="resources/logo.png" />
+            </a>
+
+        </div>
+
+        <div class="profile">
+            <div class="inner-profile">
+                <div class="inner-gangsta">
+                    <a href="${pageContext.request.contextPath}/profile.jsp">
+                        <img src="resources/male.png" />
+                        <p class="name"> &nbsp; Hello,  ${sessionScope.user.username} &nbsp; </p>
+                    </a></div>
+            </div>
+            <div class="inner-profile">
+                <div class="inner-gangsta">
+                    |
+                    &nbsp; <a id="logout_btn">   Logout</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </ul>
+</div>
+
+<div class="page-title">
+<%--    <a href="${pageContext.request.contextPath}/requisition">Home</a>--%>
+    <h3>Requisition Form</h3>
+</div>
+
+
 <div class="container">
-    <h1>Requisition Form</h1>
+<%--    <h1>Requisition Form</h1>--%>
     <hr class="divider">
     <div>
         <label class="req-label" for="req-date">Required Date</label>
@@ -27,8 +65,13 @@
 
         <label class="req-label" for="project">Choose Project</label>
         <select class="req-input" name="project" id="project">
+
+            <c:forEach items="${projects}" var="project">
+                <option value="${project.id}">${project.projectName}</option>
+
             <c:forEach items="${requisitions}" var="requisition">
                 <option value="${requisition.projectId}">${projects.get(requisition.projectId).projectName}</option>
+
             </c:forEach>
         </select>
 

@@ -6,20 +6,20 @@
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
-#navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #4FC3F7;
-    height: 47px;
-}
+/*#navbar {*/
+/*    list-style-type: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    overflow: hidden;*/
+/*    background-color: #4FC3F7;*/
+/*    height: 47px;*/
+/*}*/
 
 .container {
-    display: inline-block;
-    margin: 19px;
-    overflow: auto;
-    justify-content: center;
+    /*display: inline-block;*/
+    /*margin: 19px;*/
+    /*overflow: auto;*/
+    /*justify-content: center;*/
     /*text-align: center;*/
 }
 #projects, #requisitions{
@@ -67,9 +67,14 @@ h1 {
     width: 100%;
 }
 
-#pjt_table td, #req_table th {
-    border: 1px solid #ddd;
-    padding: 8px;
+/*#pjt_table td, #req_table th {*/
+/*    border: 1px solid #ddd;*/
+/*    padding: 8px;*/
+/*}*/
+
+#projects h3, #requisitions h3{
+    font-size: 25px;
+    margin-bottom: 12px;
 }
 
 #pjt_table tr:nth-child(even) {
