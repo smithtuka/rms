@@ -65,8 +65,13 @@
 
         <label class="req-label" for="project">Choose Project</label>
         <select class="req-input" name="project" id="project">
+
             <c:forEach items="${projects}" var="project">
                 <option value="${project.id}">${project.projectName}</option>
+
+            <c:forEach items="${requisitions}" var="requisition">
+                <option value="${requisition.projectId}">${projects.get(requisition.projectId).projectName}</option>
+
             </c:forEach>
         </select>
 

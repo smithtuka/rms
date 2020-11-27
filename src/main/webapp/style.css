@@ -223,7 +223,11 @@ button:disabled {
     color: #666666;
 }
 
+
 .del-btn, .del-pjt-btn {
+
+.del-btn {
+
     background-color: red; /* Green */
     border: none;
     color: white;
@@ -235,6 +239,7 @@ button:disabled {
     margin: 14px 2px;
     cursor: pointer;
 }
+
 
 .edit-pjt-btn, .pjt-btn, .submit-btn {
     background-color: #0091d3; /* Green */
@@ -248,6 +253,7 @@ button:disabled {
     margin: 14px 2px;
     cursor: pointer;
 }
+
 /*.heading {*/
 /*    position: absolute;*/
 /*    width: 221px;*/

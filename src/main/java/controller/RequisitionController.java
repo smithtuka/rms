@@ -34,7 +34,9 @@ public class RequisitionController extends HttpServlet {
             throws ServletException, IOException {
 
         List<Requisition> requisitionList = requisitionDao.getRequisitions();
-        req.setAttribute("projects", projectDao.getProjects());
+
+
+        req.setAttribute("projects", projectDao.getProjectDb());
         req.setAttribute("requisitions", requisitionList);
         if (req.getServletPath().equals("/requisition-form")) {
             req.getRequestDispatcher("requisition_form.jsp").forward(req, resp);
